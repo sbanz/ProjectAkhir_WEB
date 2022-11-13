@@ -14,7 +14,7 @@ body {
 /* ===== SIDE BAR ===== */
 .sidebar {
     position: fixed;
-    background: brown;
+    background: rgb(114 66 31);
     color: white;
     width: 19vw;
     min-height: 100vh;
@@ -163,7 +163,7 @@ body {
 
 .title .btn:hover, .payment .btn:hover {
     color: #191919;
-    background: brown;
+    background: grey;
     padding: 5px 10px;
     text-align: center;
 }
