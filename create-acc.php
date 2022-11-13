@@ -53,7 +53,7 @@
                                 class="form-input">
                                 <div class="btn">
                                   <input type="submit" class="button" value="Create Account">
-                                  <a href="login-acc.php" class="button">Back</a>
+                                  <a href="login-acc.php" class="button" >Back</a>
                                 </div>
                             </form>
                         </div>

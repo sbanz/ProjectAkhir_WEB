@@ -78,7 +78,6 @@ header {
 .navigation .box-nav .box:nth-child(3) {
     display: none;
 }
-/* ===== NAVIGATION ===== */
 
 
 /* ===== FORM ===== */
@@ -198,6 +197,7 @@ form {
     color: white;
     font-size: 14px;
     opacity: 0.8;
+    text-decoration: none;
 }
   
 .button:hover{
@@ -232,7 +232,7 @@ form {
     color: rgb(117, 24, 24);
     text-decoration: none;
 }
-/* ===== FORM ===== */
+
 
 
 /* ===== FOOTER ===== */
@@ -253,4 +253,3 @@ footer p a {
     color: white; 
     text-decoration: none;
 }
-/* ===== FOOTER ===== */
