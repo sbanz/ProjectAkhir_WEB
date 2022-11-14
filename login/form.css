@@ -84,7 +84,7 @@ header {
 form {
     display: inline-grid;
 }
-  
+
 .box-login {
     width: 25%;
     height: 55%;
@@ -96,7 +96,7 @@ form {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-  
+
 .box-create {
     width: 30%;
     background: white ;
@@ -164,7 +164,7 @@ form {
     opacity: 0.8;
 }
   
-.btn-login:hover{
+.btn-login:hover {
     opacity: 1;
     color: black;
     transition: all .5s ease-in-out;
@@ -181,7 +181,7 @@ form {
     opacity: 0.8;
 }
   
-.submit:hover{
+.submit:hover {
     opacity: 1;
     color: black;
     transition: all .5s ease-in-out;

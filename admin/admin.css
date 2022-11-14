@@ -16,8 +16,8 @@ body {
     position: fixed;
     background: rgb(114 66 31);
     color: white;
-    width: 19vw;
-    min-height: 100vh;
+    width: 15vw;
+    min-height: 150vh;
     display: flex;
     flex-direction: column;
 }
@@ -65,10 +65,11 @@ body {
     justify-content: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
+    padding-bottom: 10px solid black;
 }
 
 .nav {
-    width: 90%;
+    width: 80%;
     display: flex;
     align-items: center;
 }
@@ -83,7 +84,7 @@ body {
     border: none;
     background: white;
     padding: 10px;
-    width: 50%;
+    width: 30%;
 }
 
 .search button {
@@ -110,6 +111,7 @@ body {
     background: white;
     border-radius: 50%;
     color: #191919;
+
     margin: 5px 5px;
 }
 
@@ -134,12 +136,13 @@ body {
     flex-wrap: wrap;
 }
 
-.payment {
+.box {
     min-height: 50vh;
     flex: 5;
     background: white;
     margin: 0 25px 25px 25px;
-    margin-left: 19vw;
+    margin-left: 15vw;
+    margin-right: 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: flex;
@@ -151,7 +154,6 @@ body {
     align-items: center;
     justify-content: space-around;
     padding: 15px 10px;
-    border-bottom: 2 px solid black;
 }
 
 .title .btn, .payment .btn {
@@ -180,6 +182,10 @@ th, td {
 
 /* ===== FOOTER ===== */
 footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
     height: 70px;
     letter-spacing: 0.7px;
     background-color: rgb(114 66 31);
@@ -190,6 +196,7 @@ footer p {
     font-size: 15px;
     text-align: center;
     opacity: 0.7;
+    justify-content: space-around;
 }
 
 footer p a {

@@ -11,21 +11,20 @@
   <body>
     <div class="sidebar">
         <div class="brand">
-            <i class="fa-sharp fa-solid fa-qrcode"></i>&nbsp;&nbsp;
             <h1>Administrator</h1>
         </div>
         <ul>
             <li><i class="fa-solid fa-gauge"></i>&nbsp;&nbsp;<span>Dashboard</span></li>
-            <li><i class="fa-solid fa-table-list"></i>&nbsp;&nbsp;<span>History Orederan</span></li>
+            <li><i class="fa-solid fa-table-list"></i>&nbsp;&nbsp;<span>History</span></li>
         </ul>
     </div> 
 
     <div class="container">
         <div class="header">
-            <div class="box-nav">
-                <div class="box">
-                    <img src="pict/logo_cafe.png" alt="logo" height="70px" width="70px">
-                </div>
+            <div class="box-nav" style="margin-right:5%">
+                <!-- <div class="box"> -->
+                    <img src="logo_cafe.png" alt="logo" height="60vh" width="70vw">
+                <!-- </div> -->
             </div>
             <div class="nav">
                 <div class="search">
@@ -33,28 +32,31 @@
                     <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
                 <div class="user">
-                    <a href="#" class="btn"><i class="fa-solid fa-plus"></i></a>
-                    <a href="#" class="btn"><i class="fa-solid fa-bell"></i></a>
                     <a href="#" class="btn"><i class="fa-solid fa-user-tie"></i></a>
                 </div>
             </div>
         </div>
         <div class="content">
-            <div class="payment">
+            <div class="box">
                 <div class="title">
                     <h2>Data Orderan</h2>
-                    <a href="#" class.btn>Lihat Semua</a>
                 </div>
                 <table>
                     <tr>
-                        <th>Nama Menu</th>
-                        <th>Harga</th>
-                        <th>Aksi</th>
+                        <th>ID Order</th>
+                        <th>Username</th>
+                        <th>ID Menu</th>
+                        <th>Tanggal</th>
+                        <th>Status</th>
+                        <th>Bukti Pembayaran</th>
                     </tr>
                     <tr>
-                        <td>coffee</td>
-                        <td>20.000</td>
-                        <td><a href="#" class="btn">lihat</a></td>
+                        <td>69696969</td>
+                        <td>Vynnn</td>
+                        <td>777777</td>
+                        <td>20/10/22</td>
+                        <td><img src="logo_cofe.jpg" alt="ini gambar" width="50px"></td>
+                        <td><a href="#" class="btn">blom</a></td>
                     </tr>
                 </table>
             </div>
