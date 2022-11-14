@@ -1,4 +1,5 @@
-# ProjectAkhirWEB
+# Project Akhir WEB
+# Web Kasir Cafe
 
 ## Kelompok 7
 ### Anggota :
