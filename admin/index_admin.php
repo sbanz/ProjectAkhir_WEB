@@ -1,3 +1,7 @@
+<?php
+  include('../connect.php'); 
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -44,19 +48,40 @@
                 <table>
                     <tr>
                         <th>ID Order</th>
-                        <th>Username</th>
+                        <th>Nama</th>
                         <th>ID Menu</th>
                         <th>Tanggal</th>
                         <th>Status</th>
                         <th>Bukti Pembayaran</th>
                     </tr>
                     <tr>
-                        <td>69696969</td>
-                        <td>Vynnn</td>
-                        <td>777777</td>
-                        <td>20/10/22</td>
-                        <td><img src="logo_cofe.jpg" alt="ini gambar" width="50px"></td>
-                        <td><a href="#" class="btn">blom</a></td>
+                    <?php
+                        $query = "SELECT * FROM orders WHERE status = 'belum' ORDER BY id_orders ASC ";
+                        $result = mysqli_query($koneksi, $query);
+                        if(!$result){
+                            die ("Query Error: ".mysqli_errno($koneksi).
+                            " - ".mysqli_error($koneksi));
+                        }
+                        $no = 1;
+                        while($row = mysqli_fetch_assoc($result))
+                        {
+                    ?>
+                    <tr>
+                        <td><?php echo $no; ?></td>
+                        <td><?php echo $row['nama']; ?></td>
+                        <td><?php echo $row['id_menus']; ?></td>
+                        <td><?php echo $row['waktu']; ?></td>
+                        <td><?php echo $row['status']; ?></td>
+                        <td style="text-align: center;"><img src="gambar/<?php echo $row['bukti']; ?>" style="width: 120px;"></td>
+                        <td>
+                            <!-- <a href="update_menu.php?id=<?php echo $row['id']; ?>">Edit</a>
+                            <a href="delete.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Anda yakin akan menghapus data ini?')">Hapus</a> -->
+                        </td>
+                    </tr>    
+                    <?php
+                        $no++; 
+                    }
+                    ?>
                     </tr>
                 </table>
             </div>
