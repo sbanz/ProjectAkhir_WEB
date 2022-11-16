@@ -14,6 +14,8 @@
                 if($row['sta'] == 'admin') {
                     session_start();
                     if(isset($_SESSION["sida"])) {
+                        $sql = "INSERT INTO loglist VALUES ('', '$username', now())";
+                        mysqli_query($koneksi, $sql);
                         header("Location: ../admin/index_admin.php", TRUE, 301);
                         die();
                     }
@@ -21,6 +23,8 @@
                         $_SESSION["start"] = time(); 
                         $_SESSION["expire"] = $_SESSION['start'] + (30 * 60) ;
                         $_SESSION["sida"] = session_id();
+                        $sql = "INSERT INTO loglist VALUES ('', '$username', now())";
+                        mysqli_query($koneksi, $sql);
                         header("Location: ../admin/index_admin.php", TRUE, 301);
                         die();
                     }
@@ -28,6 +32,8 @@
                 elseif ($row['sta'] == 'user') {
                     session_start();
                     if(isset($_SESSION["sidu"])) {
+                        $sql = "INSERT INTO loglist VALUES ('', '$username', now())";
+                        mysqli_query($koneksi, $sql);
                         header("Location: ../index.html", TRUE, 301);
                         die();
                     }
@@ -35,6 +41,8 @@
                         $_SESSION["start"] = time(); 
                         $_SESSION["expire"] = $_SESSION['start'] + (30 * 60) ;
                         $_SESSION["sidu"] = session_id();
+                        $sql = "INSERT INTO loglist VALUES ('', '$username', now())";
+                        mysqli_query($koneksi, $sql);
                         header("Location: ../index.html", TRUE, 301);
                         die();
                     }
