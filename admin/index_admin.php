@@ -70,7 +70,7 @@
                         <td><?php echo $row['nama']; ?></td>
                         <td><?php echo $row['id_menus']; ?></td>
                         <td><?php echo $row['waktu']; ?></td>
-                        <td><?php echo $row['status']; ?></td>
+                        <td><?php echo $row['stat']; ?></td>
                         <td style="text-align: center;"><img src="gambar/<?php echo $row['bukti']; ?>" style="width: 120px;"></td>
                         <td>
                             <!-- <a href="update_menu.php?id=<?php echo $row['id']; ?>">Edit</a>
