@@ -23,7 +23,7 @@
                 if ( $result ){
                     echo "<script LANGUAGE='JavaScript'>
                             window.alert('Akun Berhasil Ditambah');
-                            window.location.href='login.php';
+                            window.location.href='index_login.php';
                         </script>";
                     die();
                 }
@@ -65,10 +65,6 @@
                 <div class="box">
                     <img src="../pict/logo_cafe.png" alt="logo" height="90px" width="90px">
                     <h3>COFFEE HOUSE</h3>
-                    <label>
-                        <input tym m pe="checkbox">
-                        <span class="check"><i class="ri-toggle-fill"></i></span>
-                    </label>
                 </div>
             </div>  
         </div>
