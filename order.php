@@ -1,102 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" 
-        rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-        <link rel="stylesheet" href="style_order.css">
-        <title>Order Page</title>
-    </head>
-    <body>
-        <header>
-            <section class="navigation">
-                <div class="container">
-                    <div class="box-nav">
-                        <div class="box">
-                            <img src="pict/logo_cafe.png" alt="logo" height="90px" width="90px">
-                            <h3>COFFEE HOUSE</h3>
-                            <label>
-                                <input type="checkbox">
-                                <span class="check"><i class="ri-toggle-fill"></i></span>
-                            </label>
-                        </div>
-                        <div class="box menu-nav">
-                            <ul>
-                                <li>
-                                    <a href="index.html">Home</a>
-                                </li>
-                                <li>
-                                    <a href="./login/login.php">Logout</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>  
-                </div>
-            </section> 
+<?php
+include 'connect.php';
 
-            <div class="order">
-                <section class="base">
-                    <form action="">
-                        <label>Nama<input type="text" name="nama" class="input"></label>
-                        
-                        <br>
-                        <select class = "option" type="text" name="id_menu" id="id_menu">
-                            <option value="">- Pilih Jenis Menu -</option>
-                            <option value="coffee">Coffee</option>
-                            <option value="non-coffee">Non Coffee</option>
-                            <option value="food">Food</option>
-                            <option value="snacks">Snacks</option>
-                        </select>
+    $nama = $_POST['nama'];
+    $menu = $_POST['menus_type'];
+    $menu_name = $_POST['menus_name'];
+    $foto = $_FILES['bukti']['name'];
 
-                        <select class = "option" type="text" name="coffee" id="coffee">
-                            <option value="">- Pilih Jenis Menu -</option>
-                            <option value="coffee">Coffee</option>
-                            <option value="non-coffee">Cappucino</option>
-                            <option value="food">Frappucino Javachips</option>
-                            <option value="snacks">Coffee Brown Sugar</option>
-                            <option value="snacks">Tiramisu Latte</option>
-
-                            <option value="coffee">Red Velvet</option>
-                            <option value="non-coffee">Green Tea</option>
-                            <option value="food">Chocolate Milkshake</option>
-                            <option value="snacks">Lemon Tea</option>
-                            <option value="snacks">Manggo Smoothies</option>
-
-                            <option value="coffee">Nasi Goreng</option>
-                            <option value="non-coffee">Ayam Geprek</option>
-                            <option value="food">Chicken Katsu</option>
-                            <option value="snacks">Rice Bowl</option>
-                            <option value="snacks">Mie Goreng</option>
-
-                            <option value="coffee">French Fries</option>
-                            <option value="non-coffee">Nugget & Sausage</option>
-                            <option value="food">Fish & Chips</option>
-                            <option value="snacks">Gejrot Tofu</option>
-                            <option value="snacks">Cassava Chips</option>
-                        </select>
-                        <br>
-                        <label>Bukti Pembayaran<input type="file" name="pembayaran" class="pict"/></label>
-                        <br>
-                        <button type="submit">Confirm</button>
-                    </form>
-                    </section>
-                </div>
-            
-
-        </header>
-
-            
-        <script src="script.js"></script>
-
-    </body>
-    <footer>
-        <div class="container">
-            <p><a href="https://github.com/sbanz/ProjectAkhir_WEB">© PA Web, 2022. All rights reserved</a></p>
-        </div>
-    </footer>
-    </html>
+    if($foto != '') {
+        $ekstensi_diperbolehkan = array('png','jpg'); 
+        $x = explode('.', $foto); 
+        $ekstensi = strtolower(end($x));
+        $file_tmp = $_FILES['bukti']['tmp_name'];   
+        $angka_acak     = rand(1,999);
+        $nama_gambar_baru = $angka_acak.'-'.$foto;
+              if(in_array($ekstensi, $ekstensi_diperbolehkan) === true)  {     
+                      move_uploaded_file($file_tmp, 'gambar/'.$nama_gambar_baru); 
+                        $query1 = "INSERT INTO menus (menus_type, menus_name) VALUES ('$menu', '$menu_name')";
+                        $result1 = mysqli_query($koneksi, $query1);
+                        $last_id = mysqli_insert_id($koneksi);
+                        $query2 = "INSERT INTO orders (nama, id_menus, waktu, stat, bukti) VALUES ('$nama', $last_id, now(), 'belum', '$nama_gambar_baru')";
+                        $result2 = mysqli_query($koneksi, $query2);
+                        if(!$result1 && !$result2){
+                            die ("Query gagal dijalankan: ".mysqli_errno($koneksi).
+                                    " - ".mysqli_error($koneksi));
+                        } else {
+                            echo "<script>alert('Data berhasil ditambah.');window.location='index.html';</script>";
+                        }
+      
+                  } else {     
+                      echo "<script>alert('Ekstensi gambar yang boleh hanya jpg atau png.');window.location='index_order.php';</script>";
+                  }
+      } else {
+          $query1 = "INSERT INTO menus (menus_type, menus_name) VALUES ('$menu', '$menu_name')";
+          $last_id = mysqli_insert_id($koneksi);
+          $query2 = "INSERT INTO orders (nama, id_menus, waktu, 'stat', bukti) VALUES ('$nama', '$last_id', now(), 'belum', null)";
+          $result1 = mysqli_query($koneksi, $query1);
+          $result2 = mysqli_query($koneksi, $query2);
+          if(!$result1 && !$result2){
+              die ("Query gagal dijalankan: ".mysqli_errno($koneksi).
+              " - ".mysqli_error($koneksi));
+          } else {
+              echo "<script>alert('Data berhasil ditambah.');window.location='read.php';</script>";
+          }
+      }
+      ?>
