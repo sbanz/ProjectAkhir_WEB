@@ -21,6 +21,57 @@ header {
     background-repeat: repeat-x;
 }
 
+label {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+input[type="checkbox"] {
+    display: none;
+    visibility: hidden;
+}
+
+input[type="checkbox"]:checked ~ .check:before {
+    transform: translateX(-50px);
+}
+
+input[type="checkbox"]:checked ~ .check {
+    background-color: white;
+    box-shadow: 0 0 0 50000px black;
+}
+
+.check:before, .check:after {
+    border-radius: 50%;
+    content: '';
+    height: 16px;
+    position: absolute;
+    top: 2px;
+    transition: transform 0.5s ease;
+    width: 16px;
+}
+
+.check:before {
+    background-color: white;
+    left: 2px;
+}
+
+.check {
+    background-color: black;
+    border-radius: 20px;
+    cursor: pointer;
+    display: block;
+    height: 20px;
+    overflow: hidden;
+    position: relative;
+    transition: background-color 0.5s ease-in,
+                box-shadow 0.5s ease-in;    
+}
+
+.check i {
+    size: 40px;
+}
+
 /* ===== NAVIGATION ===== */
 .navigation {
     width: 100%;

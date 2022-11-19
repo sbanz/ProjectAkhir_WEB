@@ -21,19 +21,18 @@
 
     <div class="container">
         <div class="header">
-            <div class="box-nav" style="margin-right:5%">
-                <!-- <div class="box"> -->
-                    <img src="logo_cafe.png" alt="logo" height="60vh" width="70vw">
-                <!-- </div> -->
+            <div class="box-nav">
+                <img src="logo_cafe.png" alt="logo" height="60vh" width="70vw">
             </div>
             <div class="nav">
                 <div class="search">
                     <input type="text" placeholder="Pencarian...">
                     <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
-                <div class="user">
-                    <a href="#" class="btn"><i class="fa-solid fa-user-tie"></i></a>
-                </div>
+                <label>
+                    <input type="checkbox">
+                    <span class="check"><i class="ri-toggle-fill"></i></span>
+                </label>
             </div>
         </div>
         <div class="content">

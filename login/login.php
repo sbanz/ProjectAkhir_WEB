@@ -80,6 +80,10 @@
                 <div class="box">
                     <img src="../pict/logo_cafe.png" alt="logo" height="90px" width="90px">
                     <h3>COFFEE HOUSE</h3>
+                    <label>
+                        <input type="checkbox">
+                        <span class="check"><i class="ri-toggle-fill"></i></span>
+                    </label>
                 </div>
             </div>  
         </div>

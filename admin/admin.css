@@ -74,6 +74,10 @@ body {
     align-items: center;
 }
 
+.box-nav {
+    margin-right: 5%;
+}
+
 .search {
     flex: 5;
     display: flex;
@@ -97,22 +101,56 @@ body {
     cursor: pointer;
 }
 
-.user {
-    flex: 1;
-    display: flex;
+label {
     align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
-.user i {
-    width: 40px;
-    height: 40px;
-    font-size: 30px;
-    padding: 5px;
-    background: white;
-    border-radius: 50%;
-    color: #191919;
+input[type="checkbox"] {
+    display: none;
+    visibility: hidden;
+}
 
-    margin: 5px 5px;
+input[type="checkbox"]:checked ~ .check:before {
+    transform: translateX(-50px);
+}
+
+input[type="checkbox"]:checked ~ .check {
+    background-color: white;
+    box-shadow: 0 0 0 50000px black;
+}
+
+.check:before, .check:after {
+    border-radius: 50%;
+    content: '';
+    height: 16px;
+    position: absolute;
+    top: 2px;
+    transition: transform 0.5s ease;
+    width: 16px;
+}
+
+.check:before {
+    background-color: white;
+    left: 2px;
+}
+
+.check {
+    background-color: black;
+    border-radius: 20px;
+    cursor: pointer;
+    display: block;
+    height: 20px;
+    overflow: hidden;
+    position: relative;
+    transition: background-color 0.5s ease-in,
+                box-shadow 0.5s ease-in;    
+}
+
+.check i {
+    size: 40px;
+    color: black;
 }
 
 
@@ -177,6 +215,58 @@ table {
 th, td {
     text-align: left;
     padding: 8px;
+}
+
+label {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+input[type="checkbox"] {
+    display: none;
+    visibility: hidden;
+}
+
+input[type="checkbox"]:checked ~ .check:before {
+    transform: translateX(-50px);
+}
+
+input[type="checkbox"]:checked ~ .check {
+    background-color: white;
+    box-shadow: 0 0 0 50000px black;
+}
+
+.check:before, .check:after {
+    border-radius: 50%;
+    content: '';
+    height: 16px;
+    position: absolute;
+    top: 2px;
+    transition: transform 0.5s ease;
+    width: 16px;
+}
+
+.check:before {
+    background-color: white;
+    left: 2px;
+}
+
+.check {
+    background-color: black;
+    border-radius: 20px;
+    cursor: pointer;
+    display: block;
+    height: 20px;
+    overflow: hidden;
+    position: relative;
+    transition: background-color 0.5s ease-in,
+                box-shadow 0.5s ease-in;    
+}
+
+.check i {
+    size: 40px;
 }
 
 

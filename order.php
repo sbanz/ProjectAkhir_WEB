@@ -20,6 +20,10 @@
                         <div class="box">
                             <img src="pict/logo_cafe.png" alt="logo" height="90px" width="90px">
                             <h3>COFFEE HOUSE</h3>
+                            <label>
+                                <input type="checkbox">
+                                <span class="check"><i class="ri-toggle-fill"></i></span>
+                            </label>
                         </div>
                         <div class="box menu-nav">
                             <ul>
@@ -50,31 +54,25 @@
                         </select>
 
                         <select class = "option" type="text" name="coffee" id="coffee">
-                            <option value="">- Pilih Jenis coffee -</option>
+                            <option value="">- Pilih Jenis Menu -</option>
                             <option value="coffee">Coffee</option>
                             <option value="non-coffee">Cappucino</option>
                             <option value="food">Frappucino Javachips</option>
                             <option value="snacks">Coffee Brown Sugar</option>
                             <option value="snacks">Tiramisu Latte</option>
-                        </select>
-                        <select class = "option" type="text" name="non-coffee" id="non-coffee">
-                            <option value="">- Pilih Jenis Non Coffee -</option>
+
                             <option value="coffee">Red Velvet</option>
                             <option value="non-coffee">Green Tea</option>
                             <option value="food">Chocolate Milkshake</option>
                             <option value="snacks">Lemon Tea</option>
                             <option value="snacks">Manggo Smoothies</option>
-                        </select>
-                        <select class = "option" type="text" name="food" id="food">
-                            <option value="">- Pilih Jenis Food -</option>
+
                             <option value="coffee">Nasi Goreng</option>
                             <option value="non-coffee">Ayam Geprek</option>
                             <option value="food">Chicken Katsu</option>
                             <option value="snacks">Rice Bowl</option>
                             <option value="snacks">Mie Goreng</option>
-                        </select>
-                        <select class = "option" type="text" name="snacks" id="snacks">
-                            <option value="">- Pilih Jenis snacks -</option>
+
                             <option value="coffee">French Fries</option>
                             <option value="non-coffee">Nugget & Sausage</option>
                             <option value="food">Fish & Chips</option>
